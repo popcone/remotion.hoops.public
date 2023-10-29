@@ -1,43 +1,43 @@
-import {Composition} from 'remotion';
-import {HelloWorld, myCompSchema} from './HelloWorld';
-import {Logo, myCompSchema2} from './HelloWorld/Logo';
+import {Composition, staticFile} from 'remotion';
+import {
+	PlayByPlayPortrait,
+	PlayByPlayPortraitSchema,
+} from './components/PlayByPlayPortrait';
 
-// Each <Composition> is an entry in the sidebar!
+// Constants
+import {VIDEO_DURATION, VIDEO_FPS} from './lib/constants';
+
+// Variables
+const gameData = process.env.REMOTION_GAME_DATA as string;
 
 export const RemotionRoot: React.FC = () => {
 	return (
 		<>
 			<Composition
-				// You can take the "id" to render a video:
-				// npx remotion render src/index.ts <id> out/video.mp4
-				id="HelloWorld"
-				component={HelloWorld}
-				durationInFrames={150}
-				fps={30}
-				width={1920}
-				height={1080}
-				// You can override these props for each render:
-				// https://www.remotion.dev/docs/parametrized-rendering
-				schema={myCompSchema}
+				id="PlayByPlayPortrait"
+				component={PlayByPlayPortrait}
+				durationInFrames={VIDEO_DURATION * VIDEO_FPS}
+				fps={VIDEO_FPS}
+				width={1080}
+				height={1920}
+				schema={PlayByPlayPortraitSchema}
 				defaultProps={{
-					titleText: 'Welcome to Remotion',
-					titleColor: '#000000',
-					logoColor1: '#91EAE4',
-					logoColor2: '#86A8E7',
+					data: {},
+					splashColor: 'secondary' as const,
+					scoringColor: 'primary' as const,
+					logoBackgroundColor: 'secondary' as const,
+					backgroundColor: 'primary' as const,
 				}}
-			/>
-			{/* Mount any React component to make it show up in the sidebar and work on it individually! */}
-			<Composition
-				id="OnlyLogo"
-				component={Logo}
-				durationInFrames={150}
-				fps={30}
-				width={1920}
-				height={1080}
-				schema={myCompSchema2}
-				defaultProps={{
-					logoColor1: '#91dAE2' as const,
-					logoColor2: '#86A8E7' as const,
+				calculateMetadata={async ({props}) => {
+					const response = await fetch(staticFile(`${gameData}`));
+					const data = await response.json();
+
+					return {
+						props: {
+							...props,
+							data: data,
+						},
+					};
 				}}
 			/>
 		</>
