@@ -1,0 +1,35 @@
+:root {
+	/* Font Sizes */
+	--fs-h1: calc(3.052rem * var(--scale));
+	--fs-h2: calc(2.441rem * var(--scale));
+	--fs-h3: calc(1.953rem * var(--scale));
+	--fs-h4: calc(1.563rem * var(--scale));
+	--fs-h5: calc(1.25rem * var(--scale));
+	--fs-h6: calc(1rem * var(--scale));
+	--fs-body-1: calc(1rem * var(--scale));
+	--fs-body-2: calc(0.875rem * var(--scale));
+	--fs-body-3: calc(0.64rem * var(--scale));
+	--fs-body-4: calc(0.512rem * var(--scale));
+	/* Font Weights */
+	--fw-regular: 400;
+	--fw-medium: 600;
+	--fw-bold: 700;
+	--fw-black: 900;
+	/* Font Colors */
+	--fc-light: #fff;
+	--fc-dark: #000;
+	/* Video Att ributes */
+	--video-height: 1920px;
+	--video-height-landscape: 1080px;
+	--actual-video-height: 844px;
+	--video-width: 1080px;
+	--scale: 2.275;
+	/*  */
+	--score-height: 125px;
+	/* Brand Colors */
+	--color-brand-primary: #002439;
+	--color-brand-secondary: #f2e3c1;
+	--color-brand-tertiary: #ead775;
+	--color-brand-dark: #002439;
+	--color-brand-light: #f0e8d2;
+}

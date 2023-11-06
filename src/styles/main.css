@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
+@import url('variables.css');
+
+body {
+	color: #fff;
+	font-family: 'Inter', sans-serif;
+	font-size: 16px;
+	font-weight: var(--fw-regular);
+}
+
+h1,
+h2 {
+	margin: 0 !important;
+	font-weight: var(--fw-bold);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 0px !important;
+}
+
+h1 {
+	font-size: var(--fs-h1);
+}
+
+h2 {
+	font-size: var(--fs-h2);
+}
+
+h3 {
+	font-weight: var(--fw-medium);
+	font-size: var(--fs-h3);
+}
+
+h4 {
+	font-weight: var(--fw-medium) !important;
+	font-size: var(--fs-h4);
+}
+
+h5 {
+	font-weight: var(--fw-medium) !important;
+	font-size: var(--fs-h5);
+}
+
+h6 {
+	font-weight: var(--fw-bold) !important;
+	font-size: var(--fs-h6);
+}
+
+p {
+	font-size: var(--fs-body-1);
+	line-height: 1.333em;
+	margin: 0;
+}
+
+.text-h1,
+.text-h2,
+.text-h3 {
+	font-weight: var(--fw-bold);
+}
+
+.text-h1 {
+	font-size: var(--fs-h1);
+}
+
+.text-h2 {
+	font-size: var(--fs-h2);
+}
+
+.text-h3 {
+	font-size: var(--fs-h3);
+}
+
+.text-h4 {
+	font-size: var(--fs-h4);
+}
+
+.text-h5 {
+	font-size: var(--fs-h5);
+}
+
+.text-h6 {
+	font-size: var(--fs-h6);
+}
+
+.text-body-2 {
+	font-size: var(--fs-body-2);
+}
+
+.text-body-3 {
+	font-size: var(--fs-body-3);
+}
+
+.text-body-4 {
+	font-size: var(--fs-body-4);
+}
+
+.light {
+	color: var(--fc-dark);
+}
+
+.dark {
+	color: var(--fc-light);
+}

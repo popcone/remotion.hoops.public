@@ -1,73 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
-
-:root {
-	/* Font Sizes */
-	--fs-h1: calc(3.052rem * var(--scale));
-	--fs-h2: calc(2.441rem * var(--scale));
-	--fs-h3: calc(1.953rem * var(--scale));
-	--fs-body-1: calc(1rem * var(--scale));
-	--fs-body-2: calc(0.875rem * var(--scale));
-	/* Font Weights */
-	--fw-regular: 400;
-	--fw-medium: 600;
-	--fw-bold: 700;
-	--fw-black: 900;
-	/* Font Colors */
-	--fc-light: #fff;
-	--fc-dark: #000;
-	/* Video Attributes */
-	--video-height: 1920px;
-	--actual-video-height: 844px;
-	--video-width: 1080px;
-	--scale: 2.275;
-	/*  */
-	--score-height: 125px;
-}
-
-body {
-	color: #fff;
-	font-family: 'Inter', sans-serif;
-	font-size: 16px;
-	font-weight: var(--fw-regular);
-}
-
-h1,
-h2,
-h3 {
-	margin: 0 !important;
-	font-weight: var(--fw-bold);
-}
-
-h1 {
-	font-size: var(--fs-h1);
-}
-
-h2 {
-	font-size: var(--fs-h2);
-}
-
-h3 {
-	font-weight: var(--fw-medium) !important;
-	font-size: var(--fs-h3);
-}
-
-p {
-	font-size: var(--fs-body-1);
-	line-height: 1.333em;
-	margin: 0;
-}
-
-.text-body-2 {
-	font-size: var(--fs-body-2);
-}
-
-.light {
-	color: var(--fc-dark);
-}
-
-.dark {
-	color: var(--fc-light);
-}
+@import url('main.css');
 
 .logo-wrapper-outer {
 	height: calc(335px * var(--scale)) !important;
@@ -116,7 +47,8 @@ p {
 }
 
 .video-background {
-	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1600px' height='800px' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpolygon fill='%23222222' points='800 100 0 200 0 800 1600 800 1600 200'/%3E%3Cpolygon fill='%23444444' points='800 200 0 400 0 800 1600 800 1600 400'/%3E%3Cpolygon fill='%23666666' points='800 300 0 600 0 800 1600 800 1600 600'/%3E%3Cpolygon fill='%23888888' points='1600 800 800 400 0 800'/%3E%3Cpolygon fill='%23aaaaaa' points='1280 800 800 500 320 800'/%3E%3Cpolygon fill='%23cccccc' points='533.3 800 1066.7 800 800 600'/%3E%3Cpolygon fill='%23EEE' points='684.1 800 914.3 800 800 700'/%3E%3C/g%3E%3C/svg%3E");
+	/* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1600px' height='800px' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpolygon fill='%23222222' points='800 100 0 200 0 800 1600 800 1600 200'/%3E%3Cpolygon fill='%23444444' points='800 200 0 400 0 800 1600 800 1600 400'/%3E%3Cpolygon fill='%23666666' points='800 300 0 600 0 800 1600 800 1600 600'/%3E%3Cpolygon fill='%23888888' points='1600 800 800 400 0 800'/%3E%3Cpolygon fill='%23aaaaaa' points='1280 800 800 500 320 800'/%3E%3Cpolygon fill='%23cccccc' points='533.3 800 1066.7 800 800 600'/%3E%3Cpolygon fill='%23EEE' points='684.1 800 914.3 800 800 700'/%3E%3C/g%3E%3C/svg%3E"); */
+	background-image: url("data:image/svg+xml,%3Csvg width='475' height='639' viewBox='0 0 475 639' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_14_315)'%3E%3Cpath d='M1037 0H-563V800H1037V0Z' fill='black'/%3E%3Cpath d='M237 100C-77.8508 100 -563 200 -563 200V800H1037V200C1037 200 551.851 100 237 100Z' fill='%23222222'/%3E%3Cpath d='M237 200C-85.0346 200 -563 400 -563 400V800H1037V400C1037 400 559.035 200 237 200Z' fill='%23444444'/%3E%3Cpath d='M237 300C-96.6641 300 -563 600 -563 600V800H1037V600C1037 600 570.664 300 237 300Z' fill='%23666666'/%3E%3Cpath d='M1037 800C1037 800 586.296 400 237 400C-112.296 400 -563 800 -563 800H1037Z' fill='%23888888'/%3E%3Cpath d='M717 800C717 800 458.052 500 237 500C15.9481 500 -243 800 -243 800H717Z' fill='%23AAAAAA'/%3E%3Cpath d='M-29.7 800H503.7C503.7 800 367.185 600 237 600C106.815 600 -29.7 800 -29.7 800Z' fill='%23CCCCCC'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_14_315'%3E%3Crect width='1600' height='800' fill='white' transform='translate(-563)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
 	background-position: center calc(205px * var(--scale));
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -267,11 +199,10 @@ p {
 /* FOOTER */
 
 .logo-hoops-wrapper {
-	display: flex;
 	justify-content: end;
 	align-items: center;
-	position: absolute;
 	opacity: 0.77;
+	z-index: 7;
 }
 
 /* SPLASH SCREEN */
@@ -323,7 +254,6 @@ p {
 
 .disclaimer {
 	display: flex;
-	justify-content: ;
 	z-index: 99;
 	text-align: center;
 	height: fit-content !important;
