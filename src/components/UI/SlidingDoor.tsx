@@ -68,11 +68,11 @@ export const SplashDoor: React.FC<SplashDoor> = ({teams, team, fillColor}) => {
 				<div className="team-name">
 					<div className={`${textColor}`}>
 						<p>{team} Team</p>
-						<h3>
+						<div className="text-h3">
 							{teams[[team]]['city_name']}
 							<br />
 							{teams[[team]]['nickname']}
-						</h3>
+						</div>
 					</div>
 				</div>
 			</AbsoluteFill>

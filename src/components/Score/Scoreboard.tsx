@@ -104,7 +104,7 @@ export const Scoreboard: React.FC<Scoreboard> = ({
 				</AbsoluteFill>
 				{Object.keys(teams).map((team) => (
 					<div key={`${team}-score`} className="score">
-						<h1>{scores[intervals][team]}</h1>
+						<div className="text-h1">{scores[intervals][team]}</div>
 					</div>
 				))}
 			</AbsoluteFill>
