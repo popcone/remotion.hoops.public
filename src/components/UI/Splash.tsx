@@ -78,7 +78,7 @@ export const Splash: React.FC<Splash> = ({teams, date, splashColor}) => {
 								style={{top: `${120 * SCALE}px`}}
 							>
 								<div style={{width: '5000px'}}>
-									<Title text="Scoring Breakdown" />
+									<Title text="Scoring Breakdown" background="black" />
 								</div>
 							</Sequence>
 							<Sequence
@@ -88,7 +88,7 @@ export const Splash: React.FC<Splash> = ({teams, date, splashColor}) => {
 								}
 								style={{top: `${695 * SCALE}px`}}
 							>
-								<Title text={date} />
+								<Title text={date} background="black" />
 							</Sequence>
 						</AbsoluteFill>
 						<Sequence durationInFrames={startDoorAnimation}>

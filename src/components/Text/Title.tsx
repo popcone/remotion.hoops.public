@@ -1,12 +1,19 @@
 //
 import {useCurrentFrame, interpolate, Sequence} from 'remotion';
 
+// STYLES
+import '../../styles/scoreboard.css';
+
 // TYPES
 type Title = {
 	text: string;
+	background?: string;
 };
 
-export const Title: React.FC<Title> = ({text = 'Title'}) => {
+export const Title: React.FC<Title> = ({
+	text = 'Title',
+	background = 'transparent',
+}) => {
 	const frame = useCurrentFrame();
 
 	const animateTitle = interpolate(frame, [0, 10], [0, 1], {
@@ -25,11 +32,12 @@ export const Title: React.FC<Title> = ({text = 'Title'}) => {
 				<div
 					style={{
 						opacity: `${animateTitle}`,
-						backgroundColor: 'black',
-						padding: '0 20px',
+						backgroundColor: background,
+						padding: '0 36px',
+						borderRadius: '12px',
 					}}
 				>
-					<h2>{text}</h2>
+					<div className="text-h2">{text}</div>
 				</div>
 			</Sequence>
 		</>
