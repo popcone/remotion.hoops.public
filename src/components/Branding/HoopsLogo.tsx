@@ -1,7 +1,6 @@
 //
 import {
 	Img,
-	AbsoluteFill,
 	staticFile,
 	useVideoConfig,
 	useCurrentFrame,
@@ -15,9 +14,14 @@ import {SCALE} from '../../lib/constants';
 type HoopsLogo = {
 	size: number;
 	position?: number;
+	style?: 'outlined' | 'blue';
 };
 
-export const HoopsLogo: React.FC<HoopsLogo> = ({size, position = 12}) => {
+export const HoopsLogo: React.FC<HoopsLogo> = ({
+	size,
+	position = 12,
+	style = 'outlined',
+}) => {
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
 
@@ -25,17 +29,28 @@ export const HoopsLogo: React.FC<HoopsLogo> = ({size, position = 12}) => {
 		extrapolateRight: 'clamp',
 	});
 
+	const logoStyle = (style: string) => {
+		const styleSelection = new Map([
+			['outlined', outlined],
+			['blue', blue],
+		]);
+		return styleSelection.get(style);
+	};
+
+	const outlined = staticFile(
+		`${process.env.REMOTION_HOOPS_FYI_LOGO_OUTLINED}`
+	);
+	const blue = staticFile(`${process.env.REMOTION_HOOPS_FYI_LOGO_BLUE}`);
+
+	const HoopsLogoStyle: React.CSSProperties = {
+		position: 'relative',
+		top: `-${position * SCALE}px`,
+		opacity: `${interpolate(fadeIn, [0, 1], [0, 1])}`,
+	};
+
 	return (
-		<AbsoluteFill
-			className="logo-hoops-wrapper"
-			style={{opacity: `${interpolate(fadeIn, [0, 1], [0, 1])}`}}
-		>
-			<div
-				style={{position: 'relative', top: `-${position * SCALE}px`}}
-				className="logo"
-			>
-				<Img src={staticFile('img/logo-hoopsfyi-outline.svg')} height={size} />
-			</div>
-		</AbsoluteFill>
+		<div style={HoopsLogoStyle}>
+			<Img src={`${logoStyle(style)}`} height={size} />
+		</div>
 	);
 };
