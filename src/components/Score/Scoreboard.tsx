@@ -80,23 +80,18 @@ export const Scoreboard: React.FC<Scoreboard> = ({
 	const {winningColor} = isWinning();
 	const topScorers = getTopScorers();
 
+	const ScoreWrapperStyle: React.CSSProperties = {
+		top: `${SCORE_POSITION}`,
+		flexDirection: 'row',
+		justifyContent: 'space-around',
+		zIndex: 7,
+	};
+
 	return (
 		<>
-			<AbsoluteFill
-				style={{
-					top: `${SCORE_POSITION}`,
-					flexDirection: 'row',
-					justifyContent: 'space-around',
-					zIndex: 7,
-				}}
-			>
+			<AbsoluteFill style={ScoreWrapperStyle}>
 				{/* Clock */}
-				<AbsoluteFill
-					style={{
-						zIndex: 6,
-					}}
-					className="clock"
-				>
+				<AbsoluteFill className="clock">
 					<div className="quarter">
 						{scores[intervals]['quarter'].toUpperCase()}
 					</div>
@@ -110,14 +105,7 @@ export const Scoreboard: React.FC<Scoreboard> = ({
 			</AbsoluteFill>
 
 			{/* TOP SCORERS */}
-			<AbsoluteFill
-				style={{
-					zIndex: 6,
-					top: '928px',
-					flexDirection: 'row',
-				}}
-				className="stats"
-			>
+			<AbsoluteFill className="stats">
 				{Object.keys(topScorers).map((team) => {
 					return (
 						<div key={`${team}-top-scorers`} className="player-points">

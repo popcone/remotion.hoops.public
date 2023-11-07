@@ -30,13 +30,12 @@ export const ScoreUI: React.FC = () => {
 		extrapolateRight: 'clamp',
 	});
 
+	const ScoreboardUIStyle: React.CSSProperties = {
+		top: `${SCORE_POSITION}`,
+	};
+
 	return (
-		<AbsoluteFill
-			style={{
-				top: `${SCORE_POSITION}`,
-			}}
-			className="scoreboard-ui"
-		>
+		<AbsoluteFill style={ScoreboardUIStyle} className="scoreboard-ui">
 			{/* AWAY TEAM */}
 			<Rect
 				width={animateTeamScoreUI}

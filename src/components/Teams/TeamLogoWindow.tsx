@@ -31,37 +31,35 @@ export const TeamLogoWindow: React.FC<TeamLogoWindow> = ({
 		});
 
 	return (
-		<>
-			<AbsoluteFill className="logo-wrapper-outer">
-				{Object.keys(teams).map((team) => (
+		<AbsoluteFill className="logo-wrapper-outer">
+			{Object.keys(teams).map((team) => (
+				<div
+					key={`${team}-logo-wrapper`}
+					className="logo-wrapper-inner"
+					style={{
+						backgroundColor: `${teams[team]['colors'][logoBackgroundColor]}`,
+					}}
+				>
 					<div
-						key={`${team}-logo-wrapper`}
-						className="logo-wrapper-inner"
+						key={`${team}-logo-bg`}
+						className="logo-wrapper-bg"
 						style={{
-							backgroundColor: `${teams[team]['colors'][logoBackgroundColor]}`,
+							backgroundImage: `url(${teams[team]['logo']})`,
+							backgroundPosition: `-${animateBackground(
+								0,
+								33
+							)}px -${animateBackground(133, 166)}px`,
 						}}
-					>
-						<div
-							key={`${team}-logo-bg`}
-							className="logo-wrapper-bg"
-							style={{
-								backgroundImage: `url(${teams[team]['logo']})`,
-								backgroundPosition: `-${animateBackground(
-									0,
-									33
-								)}px -${animateBackground(133, 166)}px`,
-							}}
-						></div>
-						<div className="logo-wrapper">
-							<TeamLogo
-								logo={teams[team]['logo']}
-								size={377}
-								key={`${team}-logo`}
-							/>
-						</div>
+					></div>
+					<div className="logo-wrapper">
+						<TeamLogo
+							logo={teams[team]['logo']}
+							size={377}
+							key={`${team}-logo`}
+						/>
 					</div>
-				))}
-			</AbsoluteFill>
-		</>
+				</div>
+			))}
+		</AbsoluteFill>
 	);
 };

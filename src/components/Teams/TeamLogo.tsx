@@ -21,9 +21,13 @@ export const TeamLogo: React.FC<TeamLogo> = ({logo, size}) => {
 		from: 7,
 	});
 
+	const TeamLogoImgStyle: React.CSSProperties = {
+		transform: `scale(${scale})`,
+	};
+
 	return (
 		<div className="logo">
-			<Img src={logo} style={{transform: `scale(${scale})`}} height={size} />
+			<Img src={logo} style={TeamLogoImgStyle} height={size} />
 		</div>
 	);
 };

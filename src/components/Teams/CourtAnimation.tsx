@@ -15,11 +15,13 @@ export const CourtAnimation: React.FC<CourtAnimation> = ({abbreviation}) => {
 		extrapolateRight: 'clamp',
 	});
 
+	const CourtAnimationStyle: React.CSSProperties = {
+		left: `${position}%`,
+	};
+
 	return (
-		<>
-			<AbsoluteFill style={{left: `${position}%`}}>
-				<Court abbreviation={abbreviation} opacity={opacity} />
-			</AbsoluteFill>
-		</>
+		<AbsoluteFill style={CourtAnimationStyle}>
+			<Court abbreviation={abbreviation} opacity={opacity} />
+		</AbsoluteFill>
 	);
 };

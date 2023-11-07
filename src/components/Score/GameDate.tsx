@@ -35,14 +35,13 @@ export const GameDate: React.FC<GameDate> = ({date}) => {
 		extrapolateRight: 'clamp',
 	});
 
+	const dateStyle: React.CSSProperties = {
+		opacity: `${animateDateText}`,
+	};
+
 	return (
 		<AbsoluteFill className="date-wrapper">
-			<div
-				className="date"
-				style={{
-					opacity: `${animateDateText}`,
-				}}
-			>
+			<div className="date" style={dateStyle}>
 				{date}
 			</div>
 			<AbsoluteFill className="date-container-wrapper">

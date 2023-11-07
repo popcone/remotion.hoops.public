@@ -47,14 +47,16 @@ export const SplashDoor: React.FC<SplashDoor> = ({teams, team, fillColor}) => {
 
 	const textColor = fillColor?.toLowerCase().contrastTextColor();
 
+	const SplashDoorContentStyle: React.CSSProperties = {
+		height: `${TEAM_LOGO_SIZE}px`,
+		top: `${teamVariables[team]['top']}`,
+	};
+
 	return (
 		<AbsoluteFill className={`splash-door-${team}`}>
 			<AbsoluteFill
 				className="splash-door-content"
-				style={{
-					height: `${TEAM_LOGO_SIZE}px`,
-					top: `${teamVariables[team]['top']}`,
-				}}
+				style={SplashDoorContentStyle}
 			>
 				<div className="logo-wrapper">
 					<Freeze frame={durationInFrames}>

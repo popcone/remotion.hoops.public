@@ -20,26 +20,16 @@ export const Title: React.FC<Title> = ({
 		extrapolateRight: 'clamp',
 	});
 
+	const TextContainerStyle: React.CSSProperties = {
+		opacity: `${animateTitle}`,
+		backgroundColor: background,
+	};
+
 	return (
-		<>
-			<Sequence
-				style={{
-					zIndex: '3',
-					height: 'fit-content',
-					justifyContent: 'center',
-				}}
-			>
-				<div
-					style={{
-						opacity: `${animateTitle}`,
-						backgroundColor: background,
-						padding: '0 36px',
-						borderRadius: '12px',
-					}}
-				>
-					<div className="text-h2">{text}</div>
-				</div>
-			</Sequence>
-		</>
+		<Sequence className="title-wrapper">
+			<div style={TextContainerStyle} className="text-container">
+				<div className="text-h2">{text}</div>
+			</div>
+		</Sequence>
 	);
 };

@@ -17,11 +17,12 @@ export const WatermarkText: React.FC = () => {
 		extrapolateRight: 'clamp',
 	});
 
+	const TextWatermarkStyle: React.CSSProperties = {
+		left: `${animateWatermark}px`,
+	};
+
 	return (
-		<AbsoluteFill
-			className="text-watermark"
-			style={{left: `${animateWatermark}px`}}
-		>
+		<AbsoluteFill className="text-watermark" style={TextWatermarkStyle}>
 			{[1, 2, 3, 4, 5].map((i) => (
 				<div key={`watermark-${i}`}>{process.env.REMOTION_WATERMARK_TEXT}</div>
 			))}

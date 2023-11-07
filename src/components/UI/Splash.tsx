@@ -63,12 +63,16 @@ export const Splash: React.FC<Splash> = ({teams, date, splashColor}) => {
 		HEIGHT * 2
 	);
 
+	const DisclaimerStyle: React.CSSProperties = {
+		top: `${HEIGHT - 52 * SCALE}px`,
+	};
+
 	return (
 		<AbsoluteFill className="splash-wrapper">
 			{Object.keys(teams).map((team) => {
 				return (
 					<>
-						{/* TODO: Clean Up - positioning, z-index, shape height, style DATE to match the TITLE, move to a TITLE component */}
+						{/* TODO: Clean Up - positioning, z-index, shape height */}
 						<AbsoluteFill style={{zIndex: '99'}}>
 							<Sequence
 								from={ONE_SECOND}
@@ -77,9 +81,7 @@ export const Splash: React.FC<Splash> = ({teams, date, splashColor}) => {
 								}
 								style={{top: `${120 * SCALE}px`}}
 							>
-								<div style={{width: '5000px'}}>
-									<Title text="Scoring Breakdown" background="black" />
-								</div>
+								<Title text="Scoring Breakdown" background="black" />
 							</Sequence>
 							<Sequence
 								from={ONE_SECOND * 1.5}
@@ -92,13 +94,7 @@ export const Splash: React.FC<Splash> = ({teams, date, splashColor}) => {
 							</Sequence>
 						</AbsoluteFill>
 						<Sequence durationInFrames={startDoorAnimation}>
-							<AbsoluteFill
-								style={{
-									// TODO: Make this dynamic
-									top: `${HEIGHT - 52 * SCALE}px`,
-								}}
-								className="disclaimer"
-							>
+							<AbsoluteFill style={DisclaimerStyle} className="disclaimer">
 								<p className={`text-body-2 ${disclaimerColor}`}>
 									{process.env.REMOTION_DISCLAIMER_TEXT}
 								</p>

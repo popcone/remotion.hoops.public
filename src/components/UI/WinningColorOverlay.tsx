@@ -26,12 +26,14 @@ export const WinningColorOverlay: React.FC<WinningColorOverlay> = ({
 		[0, HEIGHT * 0.65]
 	);
 
+	const WinningTeamColorOverlayStyle: React.CSSProperties = {
+		transform: `translateY(-${animateColorOverlay}px)`,
+		backgroundColor: `${winningColor}`,
+	};
+
 	return (
 		<AbsoluteFill
-			style={{
-				transform: `translateY(-${animateColorOverlay}px)`,
-				backgroundColor: `${winningColor}`,
-			}}
+			style={WinningTeamColorOverlayStyle}
 			className="winning-team-color-overlay"
 		></AbsoluteFill>
 	);

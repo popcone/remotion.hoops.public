@@ -6,8 +6,13 @@ type Court = {
 };
 
 export const Court: React.FC<Court> = ({abbreviation, opacity}) => {
+	const CourtStyle: React.CSSProperties = {
+		zIndex: 7,
+		opacity: opacity,
+	};
+
 	return (
-		<div style={{zIndex: 7, opacity: opacity}}>
+		<div style={CourtStyle}>
 			<Img
 				src={staticFile(
 					`img/in-season-courts/${abbreviation}-city-edition-court-1568x882.png`
