@@ -10,3 +10,4 @@ public
 .DS_Store
 src/Root.tsx
 src/components/PlayByPlayPortrait.tsx
+src/components/InSeasonTourneyCourts.tsx
