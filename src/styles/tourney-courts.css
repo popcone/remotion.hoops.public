@@ -1,0 +1,76 @@
+@import url('main.css');
+@import url('podcast-ui.css');
+
+:root {
+	--columns: 18;
+	--column-gap: 1em;
+	--main-content-height-landscape: calc(var(--video-height-landscape) * 0.6);
+	--thumbs-content-height-landscape: ;
+}
+
+.main-content {
+	height: calc(var(--main-height) * 0.8) !important;
+	position: relative !important;
+	align-items: center;
+	/* padding: 3em 0; */
+	/* background-color: pink; */
+}
+
+.rank {
+	border-radius: 99px;
+	padding: 0.07em 3em;
+	width: fit-content;
+	font-size: var(--fs-body-2);
+	color: var(--color-brand-secondary);
+}
+
+.thumbs-content {
+	height: calc(var(--main-height) * 0.2) !important;
+	flex-direction: row-reverse !important;
+	flex-wrap: wrap-reverse !important;
+	justify-content: center !important;
+	align-content: center !important;
+	column-gap: var(--column-gap) !important;
+	row-gap: var(--column-gap) !important;
+	position: relative !important;
+	/* background-color: purple; */
+}
+
+.thumbs-content::after {
+	content: '';
+	width: 150%;
+	height: 50%;
+	position: absolute;
+	top: 25%;
+	left: -25%;
+	/* background-color: var(--color-brand-primary); */
+	/* opacity: 0.5; */
+	z-index: -1;
+}
+
+.thumbs-content .thumbs {
+	width: calc(1920px / var(--columns));
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	overflow: hidden;
+	/* background-color: blueviolet; */
+}
+
+.thumbs .text {
+	position: absolute;
+	top: 0;
+	background-color: var(--color-brand-tertiary);
+	/* border: solid 1px; */
+	/* border-color: var(--color-brand-primary); */
+	border-radius: 7px;
+	color: var(--color-brand-primary);
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

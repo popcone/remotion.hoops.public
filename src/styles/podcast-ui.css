@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Imbue:opsz,wght@10..100,600&family=Inter:wght@600;700&family=Rasa:ital,wght@0,600;1,500;1,600&display=swap');
+@import url('main.css');
+@import url('variables.css');
+
+:root {
+	--header-height: 68px;
+	--footer-height: 132px;
+	--main-height: calc(
+		var(--video-height-landscape) - var(--header-height) - var(--footer-height)
+	);
+}
+
+.header,
+.footer {
+	width: 1920px !important;
+	flex-direction: row !important;
+	justify-content: center;
+	align-items: center;
+	position: relative !important;
+	color: var(--color-brand-primary);
+}
+
+.header {
+	height: var(--header-height) !important;
+	/* padding: 0 1.5em; */
+	/* background-color: aqua; */
+}
+
+.main {
+	height: var(--main-height) !important;
+	position: relative !important;
+	/* background-color: yellow; */
+	padding: 0 2.5em;
+}
+
+.footer {
+	height: var(--footer-height) !important;
+	bottom: 0;
+	/* background-color: red; */
+	flex-direction: row !important;
+	justify-content: space-around;
+	flex: 2;
+	padding: 0 2.5em;
+}
+
+.title {
+	text-align: center;
+	position: relative;
+	max-width: 1080px;
+}
+
+.title h3 {
+	position: relative;
+	font-family: 'Rasa', serif;
+	font-style: italic;
+	font-weight: 600;
+	line-height: 1em !important;
+}
+
+.title h3::after {
+	--height: 50px;
+	content: '';
+	position: absolute;
+	top: calc(55% - var(--height));
+	left: 0;
+	width: 100%;
+	height: var(--height);
+	/* background-color: red; */
+	z-index: -1;
+}
+
+.title .text-h4 {
+	position: relative;
+	font-family: 'Rasa', serif;
+	font-style: italic;
+	font-weight: 600;
+	z-index: 1 !important;
+}
+
+.title .text-h4::after {
+	--height: 28px;
+	content: '';
+	position: absolute;
+	top: calc(55% - var(--height));
+	left: 0;
+	width: 100%;
+	height: var(--height);
+	background-color: var(--color-brand-tertiary);
+	transform: rotate(-0.2deg);
+	z-index: -1;
+}
+
+.title .text-h3:after {
+	border: dashed 1px;
+}
+
+.background {
+	/* background-color: #1d1d1d; */
+	background-color: var(--color-brand-secondary);
+	z-index: -11;
+}
