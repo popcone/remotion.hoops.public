@@ -30,3 +30,6 @@ export const DATE_OPTIONS: {[key: string]: string} = {
 
 // TEAM LOGO
 export const TEAM_LOGO_SIZE = 188 * SCALE;
+
+// COLORS
+export const COLORS = ['primary', 'secondary', 'tertiary'] as const;
