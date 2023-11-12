@@ -14,7 +14,7 @@ import {SCALE} from '../../lib/constants';
 type HoopsLogo = {
 	size: number;
 	position?: number;
-	style?: 'outlined' | 'blue';
+	style?: 'outlined' | 'blue' | 'blue-outlined-dark';
 };
 
 export const HoopsLogo: React.FC<HoopsLogo> = ({
@@ -33,6 +33,7 @@ export const HoopsLogo: React.FC<HoopsLogo> = ({
 		const styleSelection = new Map([
 			['outlined', outlined],
 			['blue', blue],
+			['blue-outlined-dark', blueOutlinedDark],
 		]);
 		return styleSelection.get(style);
 	};
@@ -41,6 +42,9 @@ export const HoopsLogo: React.FC<HoopsLogo> = ({
 		`${process.env.REMOTION_HOOPS_FYI_LOGO_OUTLINED}`
 	);
 	const blue = staticFile(`${process.env.REMOTION_HOOPS_FYI_LOGO_BLUE}`);
+	const blueOutlinedDark = staticFile(
+		`${process.env.REMOTION_HOOPS_FYI_LOGO_BLUE_OUTLINED_DARK}`
+	);
 
 	const HoopsLogoStyle: React.CSSProperties = {
 		position: 'relative',
