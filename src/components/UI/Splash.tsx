@@ -71,7 +71,7 @@ export const Splash: React.FC<Splash> = ({teams, date, splashColor}) => {
 		<AbsoluteFill className="splash-wrapper">
 			{Object.keys(teams).map((team) => {
 				return (
-					<>
+					<div key={`${team}-splash`}>
 						{/* TODO: Clean Up - positioning, z-index, shape height */}
 						<AbsoluteFill style={{zIndex: '99'}}>
 							<Sequence
@@ -116,7 +116,7 @@ export const Splash: React.FC<Splash> = ({teams, date, splashColor}) => {
 								team={team}
 							/>
 						</AbsoluteFill>
-					</>
+					</div>
 				);
 			})}
 		</AbsoluteFill>

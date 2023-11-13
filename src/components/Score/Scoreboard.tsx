@@ -111,12 +111,11 @@ export const Scoreboard: React.FC<Scoreboard> = ({
 						<div key={`${team}-top-scorers`} className="player-points">
 							{topScorers[team].slice(0, 6).map((scorer) => {
 								return (
-									<div className={`players-${team}`}>
+									<div key={`${scorer}-points`} className={`players-${team}`}>
 										<div key={`${scorer}`} className="names">
 											{scorer[0].truncateNames()}
 										</div>
 										<div
-											key={`${scorer}-points`}
 											style={{
 												backgroundColor: `${teams[team]['colors'][scoringColor]}`,
 											}}
