@@ -30,6 +30,13 @@
 	--color-brand-primary: #002439;
 	--color-brand-secondary: #f2e3c1;
 	--color-brand-tertiary: #ead775;
-	--color-brand-dark: #002439;
+	--color-brand-dark: #1d1d1d;
 	--color-brand-light: #f0e8d2;
+	/* Border Radius */
+	--border-radius-xxl: 2.11em;
+	--border-radius-xl: 1.77em;
+	--border-radius-lg: 1.33em;
+	--border-radius-md: 1em;
+	--border-radius-sm: 0.77em;
+	--border-radius-xs: 0.33em;
 }
