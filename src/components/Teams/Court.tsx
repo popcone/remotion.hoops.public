@@ -9,6 +9,7 @@ export const Court: React.FC<Court> = ({abbreviation, opacity}) => {
 	const CourtStyle: React.CSSProperties = {
 		zIndex: 7,
 		opacity: opacity,
+		display: 'flex',
 	};
 
 	return (
