@@ -11,6 +11,9 @@
 	"repository": {},
 	"license": "UNLICENSED",
 	"dependencies": {
+		"@fortawesome/fontawesome-svg-core": "^6.4.2",
+		"@fortawesome/free-brands-svg-icons": "^6.4.2",
+		"@fortawesome/react-fontawesome": "^0.2.0",
 		"@remotion/cli": "4.0.68",
 		"@remotion/shapes": "4.0.68",
 		"@remotion/zod-types": "4.0.68",
