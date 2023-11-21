@@ -19,6 +19,7 @@ export const Court: React.FC<Court> = ({abbreviation, opacity}) => {
 					`img/in-season-courts/${abbreviation}-city-edition-court-1568x882.png`
 				)}
 				width="100%"
+				height="100%"
 			/>
 		</div>
 	);
