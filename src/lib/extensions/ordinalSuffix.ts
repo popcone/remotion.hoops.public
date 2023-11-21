@@ -9,7 +9,11 @@ Number.prototype.ordinalSuffix = function () {
 	const n = this.valueOf() as number;
 	const enOrdinalRules = new Intl.PluralRules('en-US', {type: 'ordinal'});
 
-	const suffixes = new Map([
+	/**
+	 * Map containing the ordinal suffixes for different numbers.
+	 * @type {Map<string, string>}
+	 */
+	const suffixes: Map<string, string> = new Map([
 		['one', 'st'],
 		['two', 'nd'],
 		['few', 'rd'],
@@ -17,7 +21,7 @@ Number.prototype.ordinalSuffix = function () {
 	]);
 	const rule = enOrdinalRules.select(n);
 	const suffix = suffixes.get(rule);
-	return suffix;
+	return suffix as string;
 };
 
 export {};
